@@ -6,3 +6,20 @@
 
 <%= link_to "削除", @image, method: :delete %>
 
+
+<h2>
+  コメント
+</h2>
+
+<ul>
+  <% @image.comments.each do |comment| %>
+  <li>
+    <%= comment.body %>
+  </li>
+  <% end %>
+</ul>
+
+<%= form_for [@image, Comment.new] do |f| %>
+    <%= f.text_field :body %>
+    <%= f.submit %>
+<% end %>
