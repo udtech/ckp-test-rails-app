@@ -1,0 +1,15 @@
+<h1>画像一覧</h1>
+
+
+<dl>
+  <% @images.each do |image| %>
+  <dt>
+    <%= image.title %>
+  </dt>
+  <dd>
+    <%= link_to image_tag(image.url) , image.url %>
+  </dd>
+  <% end %>
+</dl>
+
+<%= link_to "画像を投稿する", new_image_path %>
